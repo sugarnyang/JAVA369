@@ -63,6 +63,27 @@ public class MySingleLinkedList<T> {
         }
     }
 
+    public boolean delNode(T isData) {
+        if (this.head == null) {
+            return false;
+        } else {
+            Node<T> node = this.head;
+            if (node.data == isData) {
+                this.head = this.head.next;
+                return true;
+            } else {
+                while (node.next != null) {
+                    if (node.next.data == isData) {
+                        node.next = node.next.next;
+                        return true;
+                    }
+                    node = node.next;
+                }
+                return false;
+            }
+        }
+    }
+
     public static void main(String[] args) {
         MySingleLinkedList mySingleLinkedList = new MySingleLinkedList<Integer>();
         mySingleLinkedList.addNode(1);
@@ -70,12 +91,20 @@ public class MySingleLinkedList<T> {
         mySingleLinkedList.addNode(2);
         mySingleLinkedList.addNode(4);
         mySingleLinkedList.addNode(5);
+        mySingleLinkedList.printAll();
+        System.out.println("===================================");
 
         mySingleLinkedList.addNodeInside(999, 3);
-        mySingleLinkedList.addNodeInside(77,5);
-        mySingleLinkedList.addNodeInside(8,100);
-
+        mySingleLinkedList.addNodeInside(77, 5);
+        mySingleLinkedList.addNodeInside(8, 100);
         mySingleLinkedList.printAll();
+        System.out.println("===================================");
+
+        mySingleLinkedList.delNode(0);
+        mySingleLinkedList.delNode(77);
+        mySingleLinkedList.delNode(5);
+        mySingleLinkedList.printAll();
+
     }
 
 }

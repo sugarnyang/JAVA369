@@ -1,0 +1,11 @@
+*.class
+*.xml
+.idea/MyLibrary.iml
+HELP.md
+.mvn/wrapper/MavenWrapperDownloader.java
+.mvn/wrapper/maven-wrapper.properties
+.mvn/wrapper/maven-wrapper.jar
+mvnw
+mvnw.cmd
+*.iml
+MyLibrary.iml
